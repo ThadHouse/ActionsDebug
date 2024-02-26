@@ -7,14 +7,10 @@ jobs:
     runs-on: windows-2022
     steps:
     - name: Execute
-      run: |
-        "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
-      shell: cmd
-    - name: Tools
-      run: |
+      run:
+        call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
+
         echo %vctoolsversion%
-      shell: cmd
-    - name: Dir
-      run: |
+
         dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC"
       shell: cmd
